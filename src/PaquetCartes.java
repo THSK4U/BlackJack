@@ -9,7 +9,7 @@ public class PaquetCartes {
     public PaquetCartes() {
         cartes = new ArrayList<>();
         for (String forme : new String[]{"carreau", "coure", "pique", "trefle"}) {
-            for (String valeur : new String[]{"1", "2", "3", "4","5", "6", "7", "8","9", "10"}) {
+            for (int valeur : new int[]{1,2,3,4,5,6,7,8,9,10,10,10}) {
                 cartes.add(new Carte(forme, valeur));
             }
         }
@@ -27,9 +27,9 @@ public class PaquetCartes {
 
 class Carte {
     private String forme;
-    private String valeur;
+    private int valeur;
 
-    public Carte(String forme, String valeur) {
+    public Carte(String forme, int valeur) {
         this.forme = forme;
         this.valeur = valeur;
     }
@@ -38,7 +38,7 @@ class Carte {
         return forme;
     }
 
-    public String getValeur() {
+    public int getValeur() {
         return valeur;
     }
 }
