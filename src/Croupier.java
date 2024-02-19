@@ -9,11 +9,13 @@ public class Croupier {
             int s = scan.nextInt();
             switch (s) {
                 case 1:
-                    Hand.AjouterCart();
+                    BlackJack.JoueurTour();
                     break;
                 case 2:
-                    System.out.println("dsf");
+                   BlackJack.CroupierTour();
                     break;
+                default:
+                    System.out.println("Choix invalide.");
             }
         }
 

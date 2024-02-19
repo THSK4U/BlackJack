@@ -1,8 +1,11 @@
 public class Hand extends Cartes {
-    private static int i = 3;
     private static int ValeurMaintotal;
     private static int valeurmaintotal;
+    private static int valeurmaintotalcro;
 
+    public static int getValeurmaintotalcro() {
+        return valeurmaintotalcro;
+    }
     public static int getValeurMaintotal() {
         return ValeurMaintotal;
     }
@@ -11,8 +14,8 @@ public class Hand extends Cartes {
         Cartes.cartes();
 
     }
-
     public static void AjouterCart() {
+        int i = 3;
         PaquetCartes paquetCartes = new PaquetCartes();
         Carte randomCard = paquetCartes.getRandomCard();
         int randomcart = randomCard.getValeur();
@@ -20,13 +23,21 @@ public class Hand extends Cartes {
         valeurmaintotal += randomcart;
         ValeurMaintotal = getValeurmain()+ valeurmaintotal;
 
-        System.out.println("La valeur totale de la main est : " + ValeurMaintotal);
+        System.out.println("La valeur totale de la main : " + ValeurMaintotal);
         System.out.println(" carte " + i++ + " : " + randomCard.getForme() + " number " + randomcart);
 
-        if (getValeurMaintotal() > 21){
-            System.out.println("********Vous avez dépassé 21 :( *******");
-        }else if (getValeurMaintotal() == 21){
-            System.out.println("-------Mabrok-------");
-        }
     }
+    public static void AjouterCartCroupir() {
+        int i = 1;
+        PaquetCartes paquetCartes = new PaquetCartes();
+        Carte randomCardcro = paquetCartes.getRandomCardcro();
+        int randomcartcro = randomCardcro.getValeur();
+
+        valeurmaintotalcro += randomcartcro;
+        ValeurMaintotal = getValeurmain()+ valeurmaintotal;
+
+        System.out.println("La valeur totale de la main du croupier : " + getValeurmaintotalcro());
+        System.out.println(" carte " + i++ + " : " + randomCardcro.getForme() + " number " + randomcartcro);
+
+}
 }

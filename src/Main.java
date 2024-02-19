@@ -13,6 +13,7 @@ public class Main {
                 System.out.println("soon...");
                 break;
             default:
+                System.out.println("Choix invalide.");
                 break;
         }
     }

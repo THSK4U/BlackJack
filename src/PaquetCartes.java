@@ -29,7 +29,7 @@ public class PaquetCartes {
     public PaquetCartes() {
         cartes = new ArrayList<Carte>();
         for (String forme : new String[]{"carreau", "coure", "pique", "trefle"}) {
-            for (int valeur : new int[]{1,2,3,4,5,6,7,8,9,10,10,10}) {
+            for (int valeur : new int[]{1,2,3,4,5,6,7,8,9,10,10,10,10}) {
                 cartes.add(new Carte(forme, valeur));
             }
         }
@@ -40,6 +40,10 @@ public class PaquetCartes {
     }
 
     public Carte getRandomCard() {
+        int randomIndex = new Random().nextInt(cartes.size());
+        return cartes.get(randomIndex);
+    }
+    public Carte getRandomCardcro() {
         int randomIndex = new Random().nextInt(cartes.size());
         return cartes.get(randomIndex);
     }
