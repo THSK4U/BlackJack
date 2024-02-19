@@ -1,20 +1,32 @@
-public class Hand extends Cartes{
+public class Hand extends Cartes {
+    private static int i = 3;
+    private static int ValeurMaintotal;
+    private static int valeurmaintotal;
+
+    public static int getValeurMaintotal() {
+        return ValeurMaintotal;
+    }
+
     public static void hand() {
         Cartes.cartes();
-        PaquetCartes paquetCartes = new PaquetCartes();
+
     }
 
-        public static void AjouterCart(){
-            PaquetCartes paquetCartes = new PaquetCartes();
-            Carte randomCard4 = paquetCartes.getRandomCard();
-            Carte randomCard5 = paquetCartes.getRandomCard();
-            int i=2;
-            ++i;
-            System.out.println(" carte "+i+" : " + randomCard4.getForme() + " number " + randomCard5.getValeur());
-    }
-    public static void CalculerValeurTotale(){
-        Cartes cartes = new Cartes();
-        int Valeurmaintotal = Valeurmain + randomCard4.getValeur();
+    public static void AjouterCart() {
+        PaquetCartes paquetCartes = new PaquetCartes();
+        Carte randomCard = paquetCartes.getRandomCard();
+        int randomcart = randomCard.getValeur();
+
+        valeurmaintotal += randomcart;
+        ValeurMaintotal = getValeurmain()+ valeurmaintotal;
+
+        System.out.println("La valeur totale de la main est : " + ValeurMaintotal);
+        System.out.println(" carte " + i++ + " : " + randomCard.getForme() + " number " + randomcart);
+
+        if (getValeurMaintotal() > 21){
+            System.out.println("********Vous avez dépassé 21 :( *******");
+        }else if (getValeurMaintotal() == 21){
+            System.out.println("-------Mabrok-------");
+        }
     }
 }
-
